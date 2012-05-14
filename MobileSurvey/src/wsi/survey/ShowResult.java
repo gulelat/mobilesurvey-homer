@@ -23,9 +23,10 @@ import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
 import wsi.survey.question.QuestionNaire;
-import wsi.survey.result.GConstant;
-import wsi.survey.result.GSQLiteHelper;
+import wsi.survey.result.AllSurvey;
 import wsi.survey.util.CompareString;
+import wsi.survey.util.GConstant;
+import wsi.survey.util.GSQLiteHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -129,7 +130,7 @@ public class ShowResult extends Activity {
 				
 				String[] columns = new String[]{GSQLiteHelper.survey_imei, GSQLiteHelper.survey_dtime, GSQLiteHelper.survey_questionsAnswerScoreStd};
 				String selection = GSQLiteHelper.survey_imei + "=? and " + GSQLiteHelper.survey_filename + "=?";
-				String[] selectionArgs = new String[]{GConstant.IMEI, fileName};		// 数据库查询条件： imei 和 fileName
+				String[] selectionArgs = new String[]{AllSurvey.IMEI, fileName};		// 数据库查询条件： imei 和 fileName
 				String orderBy = GSQLiteHelper.survey_dtime + " asc";				// 数据库查询结果排名
 				cursor = sqlDB.query(GSQLiteHelper.TABLE_NAME, columns, selection, selectionArgs, null, null, orderBy);
 				
@@ -192,16 +193,13 @@ public class ShowResult extends Activity {
 					System.out.println("tagScoreArray = " + tagScoreArray.toString());
 				}
 				
-				int []colors = new int[] { Color.RED, Color.MAGENTA, Color.CYAN, Color.GREEN, Color.YELLOW, Color.DKGRAY, 
-									Color.GRAY, Color.LTGRAY, Color.BLUE, Color.BLACK, Color.WHITE, Color.BLACK };
-				
+				int colors[] = GConstant.getColors(tagsLen);	// 获取颜色值
 				renderer = new XYMultipleSeriesRenderer();
-//				int len = questionAnswersResultStr.split(",").length;
 				for(int i=1; i<tagsLen; i++){
 					XYSeriesRenderer xyRenderer = null;
 					if(isCheckListItems[i] || isCheckListItems[0]){
 						xyRenderer = new XYSeriesRenderer();
-						xyRenderer.setColor(colors[i]);
+						xyRenderer.setColor(colors[i-1]);
 //						xyRenderer.setDisplayChartValues(true);
 						xyRenderer.setPointStyle(PointStyle.CIRCLE);
 						xyRenderer.setFillPoints(true);

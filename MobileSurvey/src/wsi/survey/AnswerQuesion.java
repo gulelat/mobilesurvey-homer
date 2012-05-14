@@ -8,7 +8,7 @@ import org.apache.http.util.EncodingUtils;
 import wsi.survey.media.AudioProcess;
 import wsi.survey.question.QuestionNaire;
 import wsi.survey.question.QuestionXMLResolve;
-import wsi.survey.result.GConstant;
+import wsi.survey.result.AllSurvey;
 import wsi.survey.util.Rotate3D;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -103,7 +103,7 @@ public class AnswerQuesion extends Activity {
 	/** 读取xml文件，并且解析xml */
 	public void loadXMLFile(String fileName) {
 		try {
-			InputStream is = this.getResources().getAssets().open(GConstant.surveyFileFolder + "/" + fileName);
+			InputStream is = this.getResources().getAssets().open(AllSurvey.surveyFileFolder + "/" + fileName);
 			
 			int len = is.available();
 			byte[] buffer = new byte[len];
@@ -122,7 +122,7 @@ public class AnswerQuesion extends Activity {
 		setContentView(R.layout.descrip);
 		
 		TextView tvCaption = (TextView)findViewById(R.id.tvCaption);	// catption
-		tvCaption.setTextSize(GConstant.titleFontSize);
+		tvCaption.setTextSize(AllSurvey.titleFontSize);
 		tvCaption.setText(qnNaire.getCaption());
 		
 		TextView tvInfo = (TextView) findViewById(R.id.tvInfo);			// info
@@ -176,7 +176,7 @@ public class AnswerQuesion extends Activity {
 	/** 初始化布局文件 */
 	private void initLayout(final int idx, final LinearLayout layout){
 		TextView tvCaption = (TextView)findViewById(R.id.tvCaption);		// caption
-		tvCaption.setTextSize(GConstant.titleFontSize);
+		tvCaption.setTextSize(AllSurvey.titleFontSize);
 		tvCaption.setText(qnNaire.getCaption());
 		
 		TextView tvQuestionTitle = (TextView) findViewById(R.id.tvQuestionTitle);		// question title

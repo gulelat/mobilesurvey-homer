@@ -1,4 +1,4 @@
-package wsi.survey.result;
+package wsi.survey.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

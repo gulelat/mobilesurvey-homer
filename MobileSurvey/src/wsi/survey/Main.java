@@ -20,7 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import wsi.survey.media.AudioProcess;
-import wsi.survey.result.GConstant;
+import wsi.survey.result.AllSurvey;
+import wsi.survey.util.GConstant;
 import wsi.survey.util.ImageAdapter;
 import wsi.survey.util.ImageGallery;
 
@@ -68,7 +69,7 @@ public class Main extends Activity {
 		layout_main = (RelativeLayout)findViewById(R.id.layout_main);
 		
 		mTelManager = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
-		GConstant.IMEI = mTelManager.getDeviceId();
+		AllSurvey.IMEI = mTelManager.getDeviceId();
 		
 		// 获取物理屏幕
 		DisplayMetrics dm = new DisplayMetrics();
@@ -105,15 +106,15 @@ public class Main extends Activity {
 		AudioProcess.playMedia();
 		isFirstLoad = false;
 		
-		for(int i=0; i<GConstant.surveyFiles.length; i++){
+		for(int i=0; i<AllSurvey.surveyFiles.length; i++){
 			Map<String, Object> imgMap = new HashMap<String, Object>();	// 图片资源
-			imgMap.put("images", GConstant.imgs[i]);
+			imgMap.put("images", AllSurvey.imgs[i]);
 			imgList.add(imgMap);
 			
 			Map<String, String> map = new HashMap<String, String>();		// 文件名、标题、描述
-			map.put("fileName", GConstant.surveyFiles[i][0]);
-			map.put("fileTitle", GConstant.surveyFiles[i][1]);
-			map.put("fileDescrp", GConstant.surveyFiles[i][2]);
+			map.put("fileName", AllSurvey.surveyFiles[i][0]);
+			map.put("fileTitle", AllSurvey.surveyFiles[i][1]);
+			map.put("fileDescrp", AllSurvey.surveyFiles[i][2]);
 			mList.add(map);
 		}
 		
@@ -124,9 +125,9 @@ public class Main extends Activity {
 		imgGallery.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				tvTitle.setTextSize(GConstant.titleFontSize);
-				tvTitle.setText(GConstant.surveyFiles[position][1]);
-				tvDescrp.setText(GConstant.surveyFiles[position][2]);
+				tvTitle.setTextSize(AllSurvey.titleFontSize);
+				tvTitle.setText(AllSurvey.surveyFiles[position][1]);
+				tvDescrp.setText(AllSurvey.surveyFiles[position][2]);
 			}
 
 			@Override
@@ -138,7 +139,7 @@ public class Main extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(Main.this, AnswerQuesion.class);
-				intent.putExtra("fileName", GConstant.surveyFiles[position][0]);
+				intent.putExtra("fileName", AllSurvey.surveyFiles[position][0]);
 				isStartActivity = true;
 				startActivity(intent);
 			}

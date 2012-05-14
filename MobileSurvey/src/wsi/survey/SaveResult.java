@@ -9,8 +9,8 @@ import org.json.JSONObject;
 
 import wsi.survey.question.OptionItem;
 import wsi.survey.question.QuestionNaire;
-import wsi.survey.result.GConstant;
-import wsi.survey.result.GSQLiteHelper;
+import wsi.survey.result.AllSurvey;
+import wsi.survey.util.GSQLiteHelper;
 
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -62,7 +62,7 @@ public class SaveResult {
 	
 	/** 保存问卷每道题的得分记录 */
 	private void savedQuestionsResult() {
-		imei = GConstant.IMEI;
+		imei = AllSurvey.IMEI;
 		dtime = (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(new Date(System.currentTimeMillis())) ;
 		questionsNum = qnNaire.getQuestionsNum();
 		
