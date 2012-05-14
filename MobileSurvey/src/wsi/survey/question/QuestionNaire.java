@@ -1,11 +1,6 @@
 package wsi.survey.question;
 
-import android.R.string;
-import android.widget.Scroller;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 

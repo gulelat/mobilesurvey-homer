@@ -33,7 +33,6 @@ public class GConstant {
 
 		} else { // 大于 800X1280
 			titleFontSize = 32;
-
 		}
 	}
 

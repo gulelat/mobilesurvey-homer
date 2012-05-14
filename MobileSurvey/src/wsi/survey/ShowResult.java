@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -66,7 +65,7 @@ public class ShowResult extends Activity {
 		fileName = this.getIntent().getExtras().getString("fileName");
 		lastTestTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format( new Date(System.currentTimeMillis() ));
 		
-		SaveResult saveResult = new SaveResult(this);
+		new SaveResult(this);
 		
 
 		this.qnNaire = AnswerQuesion.qnNaire;

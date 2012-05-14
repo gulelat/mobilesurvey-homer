@@ -176,6 +176,7 @@ public class GraphicalView extends View {
 		Log.i("mChart", "width = " + width + "; height= " + height);
 		mChart.draw(canvas, left, top, width, height, mPaint);
 		
+		// 绘制放大缩小按钮
 		if (mRenderer != null && mRenderer.isZoomEnabled() && mRenderer.isZoomButtonsVisible()) {
 			mPaint.setColor(ZOOM_BUTTONS_COLOR);
 			zoomSize = Math.max(zoomSize, Math.min(width, height) / 7);
@@ -188,10 +189,6 @@ public class GraphicalView extends View {
 			canvas.drawBitmap(fitZoomImage, left + width - zoomSize * 0.75f, buttonY, null);
 		}
 	}
-
-//	public void setBackgound(int resid){
-//		this.resId = resid;
-//	}
 	
 	
 	/**
