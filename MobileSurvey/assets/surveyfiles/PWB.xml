@@ -27,9 +27,7 @@
 	欢迎您填写本量表，本量表是针对微博使用而设计的。通过填写本量表，您可以评测您的心理幸福感。
 	</information>
     <interfacetype>inf_PWB</interfacetype>
-    <remarkintroduce>
-
-    </remarkintroduce>
+    <remarkintroduce></remarkintroduce>
   </description>
 
   <questions>

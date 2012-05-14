@@ -119,7 +119,7 @@ public abstract class AbstractChart implements Serializable {
 			
 			int sLength = Math.min(titles.length, renderer.getSeriesRendererCount());
 			for (int i = 0; i < sLength; i++) {
-				final float lineSize = getLegendShapeWidth(i);
+				final float lineSize = getLegendShapeWidth(i) + 10;
 				String text = titles[i];
 				if (titles.length == renderer.getSeriesRendererCount()) {
 					paint.setColor(renderer.getSeriesRendererAt(i).getColor());

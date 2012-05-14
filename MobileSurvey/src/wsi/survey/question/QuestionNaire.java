@@ -19,8 +19,6 @@ public class QuestionNaire {
 		this.questionsNum = 0;
 		
 		this.tagsMap = new HashMap<String, String>();
-		
-		
 		this.remarksMap = new HashMap<String, String>();
 	}
 	

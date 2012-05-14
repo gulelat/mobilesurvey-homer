@@ -123,7 +123,6 @@ public class ShowResult extends Activity {
 			try {
 				dataset = new XYMultipleSeriesDataset();
 				
-				
 				sqlHelper = GSQLiteHelper.getInstance(mContext, GSQLiteHelper.DB_NAME, null, 1);
 				sqlDB = sqlHelper.getReadableDatabase();
 				

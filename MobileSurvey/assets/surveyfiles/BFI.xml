@@ -14,7 +14,7 @@
 
 <questionnaire>
   <description>
-    <identifier>Personality</identifier>
+    <identifier>id_BFI</identifier>
     <caption>大五人格测试（BFI）</caption>
     <information>
 	大五人格量表（The Big Five Inventory, BFI）
@@ -30,7 +30,7 @@
 	</information>
 	<interfacetype>inf_BFI</interfacetype>		<!-- 问卷分数计算的类名 -->
 	
-    <remarkintroduce>  </remarkintroduce>
+    <remarkintroduce></remarkintroduce>
   </description>
 
   <questions>

@@ -16,9 +16,7 @@
 	下面有二十条文字，请仔细阅读每一条，把意思弄明白，然后根据您最近一星期的实际感觉做答。
 	</information>
     <interfacetype>inf_SAS</interfacetype>
-    <remarkintroduce>
-
-    </remarkintroduce>
+    <remarkintroduce></remarkintroduce>
   </description>
 
   <questions>
@@ -186,26 +184,9 @@
   </questions>
 
   
-  
-  
-  
-  
-<!-- 
-	tag
-	name：问卷的评判维度
-	label:问卷的评判维度的名称
-	title:问卷的评判维度的说明
--->
- 
-  
-  
-  
-  
-  
   <remarks>
     <remark Tag_for_score="high" Name="自我接纳">您的得分高于平均水平，属于高分组。高分组对自我持有积极的态度，承认并包容自己的优缺点，对自己过去的生活感到满意。</remark>
     <remark Tag_for_score="low" Name="自我接纳">您的得分低于平均水平，属于低分组。低分组对自我感到十分不满意，对自己过去的生活感到失望，对自我身上的个性品质感到苦恼，希望能够改变自己的现状。</remark>
-	
   </remarks>
 
 </questionnaire>
